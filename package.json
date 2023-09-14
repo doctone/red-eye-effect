@@ -1,0 +1,21 @@
+{
+  "name": "red-eye-effect",
+  "version": "1.0.0",
+  "description": "building experiment",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon index.ts",
+    "test": "test"
+  },
+  "author": "Sam James",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
+  }
+}
