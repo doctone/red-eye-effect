@@ -1,5 +1,5 @@
 {
-  "name": "red-eye-effect",
+  "name": "server",
   "version": "1.0.0",
   "description": "building experiment",
   "main": "index.ts",
