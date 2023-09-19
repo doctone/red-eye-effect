@@ -6,8 +6,7 @@
   "scripts": {
     "start": "nodemon index.ts",
     "start:prod": "ts-node index.ts",
-    "test": "vitest",
-    "build:image": "docker build . -t red-eye-effect"
+    "test": "vitest"
   },
   "author": "Sam James",
   "license": "ISC",

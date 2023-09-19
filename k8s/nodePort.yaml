@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    red-eye: effect
+  ports:
+    - port: 3050
+      targetPort: 3000
