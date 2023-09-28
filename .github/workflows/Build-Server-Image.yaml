@@ -26,11 +26,18 @@ jobs:
         with:
           images: samjamesjazz/red-eye-effect
 
+      - name: Get Git SHA
+        id: git_sha
+        run: echo "::set-output name=sha::$(git rev-parse --short HEAD)"
+
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
-          context: .
+          context: ./server
           file: ./server/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            latest
+            ${{ steps.meta.outputs.tags }}
+            ${{ steps.meta.outputs.tags }}-${{ steps.git_sha.outputs.sha }}
           labels: ${{ steps.meta.outputs.labels }}
