@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
-          images: samjamesjazz/red-eye-effect:latest
+          images: samjamesjazz/red-eye-effect
 
       - name: Get Git SHA
         id: git_sha
@@ -38,5 +38,5 @@ jobs:
           push: true
           tags: |
             latest
-            ${{ steps.git_sha.outputs.sha }}
+            ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
