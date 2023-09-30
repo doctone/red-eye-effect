@@ -38,6 +38,5 @@ jobs:
           push: true
           tags: |
             latest
-            ${{ steps.meta.outputs.tags }}
-            ${{ steps.meta.outputs.tags }}-${{ steps.git_sha.outputs.sha }}
+            ${{ steps.git_sha.outputs.sha }}
           labels: ${{ steps.meta.outputs.labels }}
