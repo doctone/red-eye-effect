@@ -20,21 +20,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
-        with:
-          images: samjamesjazz/red-eye-effect
-
-      - name: Get Git SHA
-        id: git_sha
-        run: echo "::set-output name=sha::$(git rev-parse --short HEAD)"
-
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./server
           file: ./server/Dockerfile
           push: true
-          tags: samjamesjazz/red-eye-effect:latest, samjamesjazz/red-eye-effect:${{ steps.meta.outputs.tags }}
+          tags: samjamesjazz/red-eye-effect:latest, samjamesjazz/red-eye-effect:${{ vars.GITHUB_SHA }}
           labels: ${{ steps.meta.outputs.labels }}
