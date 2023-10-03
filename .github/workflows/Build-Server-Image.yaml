@@ -26,5 +26,5 @@ jobs:
           context: ./server
           file: ./server/Dockerfile
           push: true
-          tags: samjamesjazz/red-eye-effect:latest, samjamesjazz/red-eye-effect:$GITHUB_SHA
+          tags: samjamesjazz/red-eye-effect:latest, samjamesjazz/red-eye-effect:${{ env.GITHUB_SHA }}
           labels: ${{ steps.meta.outputs.labels }}
