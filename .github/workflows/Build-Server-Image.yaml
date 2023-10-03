@@ -36,7 +36,5 @@ jobs:
           context: ./server
           file: ./server/Dockerfile
           push: true
-          tags: |
-            latest
-            ${{ steps.meta.outputs.tags }}
+          tags: samjamesjazz/red-eye-effect:latest, samjamesjazz/red-eye-effect:${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
