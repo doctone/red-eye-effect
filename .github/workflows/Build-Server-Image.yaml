@@ -1,5 +1,7 @@
 name: Docker Server CI
 
+env:
+  GITHUB_SHA: $GITHUB_SHA
 on:
   workflow_run:
     workflows: ["Test Server"]
