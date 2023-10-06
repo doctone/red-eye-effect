@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: server
-          image: samjamesjazz/red-eye-effect:main
+          image: samjamesjazz/red-eye-effect:latest
           resources:
             limits:
-              memory: "128Mi"
+              memory: "256Mi"
               cpu: "500m"
           ports:
             - containerPort: 3000
