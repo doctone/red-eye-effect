@@ -4,5 +4,5 @@ import app from ".";
 
 it("runs", async () => {
   const res = await request(app).get("/");
-  expect(res.body).toMatchObject({ message: "Hello Mike!" });
+  expect(res.body).toMatchObject({ message: "Hello Joel!" });
 });
