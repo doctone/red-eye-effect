@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:current-alpine3.18
 
 WORKDIR /usr/src/app
 
@@ -11,4 +11,3 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm","run","start:prod"]
-
